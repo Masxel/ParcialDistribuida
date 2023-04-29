@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AGTicketPass.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230429010804_MyFirstMigrationTicket")]
-    partial class MyFirstMigrationTicket
+    [Migration("20230429024912_newvalues")]
+    partial class newvalues
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,10 +28,7 @@ namespace AGTicketPass.API.Migrations
             modelBuilder.Entity("AG_TicketPass.Shared.Entities.Ticket", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("EntrancePlaceType")
                         .HasColumnType("int");

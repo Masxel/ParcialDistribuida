@@ -46,6 +46,3 @@ namespace AG_TicketPass.WEB.Repositories
         }
     }
 }
-
-}
-}

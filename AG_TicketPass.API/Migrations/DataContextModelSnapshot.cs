@@ -25,10 +25,7 @@ namespace AGTicketPass.API.Migrations
             modelBuilder.Entity("AG_TicketPass.Shared.Entities.Ticket", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("EntrancePlaceType")
                         .HasColumnType("int");

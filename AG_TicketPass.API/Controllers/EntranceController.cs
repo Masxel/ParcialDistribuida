@@ -19,20 +19,17 @@ namespace AG_TicketPass.API.Controllers
         }
 
 
-        [HttpGet]
-        public async Task<ActionResult> Get()
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetAsync(int id)
         {
-            return Ok(await _context.Tickets.ToListAsync());
-        }
+            var ticket = await _context.Tickets.FirstOrDefaultAsync(x => x.Id == id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
 
-        [HttpPost]
-        public async Task<ActionResult> Post(Ticket ticket)
-        {
-            _context.Add(ticket);
-            await _context.SaveChangesAsync();
             return Ok(ticket);
         }
-
 
 
 

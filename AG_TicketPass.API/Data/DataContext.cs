@@ -18,7 +18,7 @@ namespace AG_TicketPass.API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Ticket>().HasIndex(t => t.IdTicket).IsUnique();
+            modelBuilder.Entity<Ticket>().HasIndex(t => t.Id).IsUnique();
         }
 
     }

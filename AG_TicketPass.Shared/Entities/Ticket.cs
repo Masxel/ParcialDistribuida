@@ -10,7 +10,7 @@ namespace AG_TicketPass.Shared.Entities
     public  class Ticket
     {
 
-        public int IdTicket { get; set; }
+        public int Id { get; set; }
 
         public DateTime UseDate { get; set; }
 

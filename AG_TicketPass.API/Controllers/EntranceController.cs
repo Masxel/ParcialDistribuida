@@ -18,18 +18,26 @@ namespace AG_TicketPass.API.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public async Task<ActionResult> Get()
+        { 
+            return Ok(await _context.Tickets.ToListAsync());
+        }
+
+
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetAsync(int id)
+        public async Task<ActionResult> Get(int id)
         {
-            var ticket = await _context.Tickets.FirstOrDefaultAsync(x => x.Id == id);
-            if (ticket == null)
+            var country = await _context.Tickets.FirstOrDefaultAsync(x => x.Id == id);
+            if (country is null)
             {
                 return NotFound();
             }
 
-            return Ok(ticket);
+            return Ok(country);
         }
+
 
         [HttpPut]
         public async Task<ActionResult> Put(Ticket ticket)

@@ -31,6 +31,13 @@ namespace AG_TicketPass.API.Controllers
             return Ok(ticket);
         }
 
+        [HttpPut]
+        public async Task<ActionResult> Put(Ticket ticket)
+        {
+            _context.Update(ticket);
+            await _context.SaveChangesAsync();
+            return Ok(ticket);
+        }
 
 
     }
